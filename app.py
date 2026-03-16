@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import os
 
 
 st.markdown("""
@@ -29,7 +30,9 @@ cities = ['Hyderabad','Bangalore','Mumbai','Indore','Kolkata','Delhi',
 'Visakhapatnam','Pune','Raipur','Ranchi','Abu Dhabi',
 'Sharjah','Mohali','Bengaluru']
 
-pipe = pickle.load(open('pipe.pkl','rb'))
+
+model_path = os.path.join(os.path.dirname(__file__), "pipe.pkl")
+pipe = pickle.load(open(model_path, "rb"))
 
 st.markdown("<h1 style='text-align:center;color:#FFD700;'>🏏 IPL Win Predictor</h1>", unsafe_allow_html=True)
 
