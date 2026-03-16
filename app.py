@@ -1,5 +1,5 @@
 import streamlit as st
-import pickle
+import joblib
 import pandas as pd
 import os
 
@@ -32,7 +32,7 @@ cities = ['Hyderabad','Bangalore','Mumbai','Indore','Kolkata','Delhi',
 
 
 model_path = os.path.join(os.path.dirname(__file__), "pipe.pkl")
-pipe = pickle.load(open(model_path, "rb"))
+pipe = joblib.load(open(model_path, "rb"))
 
 st.markdown("<h1 style='text-align:center;color:#FFD700;'>🏏 IPL Win Predictor</h1>", unsafe_allow_html=True)
 
